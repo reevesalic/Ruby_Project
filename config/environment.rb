@@ -4,7 +4,8 @@ module RubyProject
   class Error < StandardError; end
   # Your code goes here...
 end
-
+require 'pry'
+require 'httparty'
 
 require 'dotenv/load'
 require "bundler/setup"

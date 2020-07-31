@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require_relative '../config/environment.rb'
+
+pick_a_photo = CLI.new.welcome

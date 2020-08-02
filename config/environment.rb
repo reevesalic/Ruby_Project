@@ -5,12 +5,12 @@ module RubyProject
   # Your code goes here...
 end
 require 'pry'
-require 'httparty'
+require 'Nokogiri'
 
-require 'dotenv/load'
+
 require "bundler/setup"
 Bundler.require
 
 require_relative '../lib/cli.rb'
-require_relative '../lib/api.rb'
-require_relative '../lib/photos.rb'
+require_relative '../lib/scraper.rb'
+require_relative '../lib/breaking.rb'

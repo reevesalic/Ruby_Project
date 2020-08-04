@@ -2,4 +2,4 @@
 
 require_relative '../config/environment.rb'
 
-pick_a_photo = CLI.new.welcome
+breaking = CLI.new.welcome

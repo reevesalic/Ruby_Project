@@ -1,0 +1,12 @@
+please select crew or episodes
+Cast
+     if cast is selected then they can pick a cast to view
+          then the casts information is displayed.
+Episodes
+     display episode names and they pick one
+          display episode and a brief summary
+
+          methods
+          cast
+          episodes
+          attributes

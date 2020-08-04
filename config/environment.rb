@@ -5,7 +5,8 @@ module RubyProject
   # Your code goes here...
 end
 require 'pry'
-require 'Nokogiri'
+require 'nokogiri'
+require 'open-uri'
 
 
 require "bundler/setup"

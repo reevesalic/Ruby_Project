@@ -3,7 +3,7 @@ class CLI
 
  def welcome
   puts "Welcome to Breaking Bad!!"
-  @cast = Scraper::crew
+  @casts = Scraper::casts
   @episodes = Scraper::episodes
  
     options
@@ -13,12 +13,12 @@ class CLI
   input = nil
   while input != "exit"
     
-  puts "Choose 1 for crew information, 2 for episode information, or 3 to exit!"
+  puts "Choose 1 for cast information, 2 for episode information, or 3 to exit!"
   
   input = gets.strip.downcase
   case input
   when "1"
-  puts @cast
+  puts @casts
   when "2"
   puts @episodes
   when "3"

@@ -1,10 +1,10 @@
 class Scraper
   
-  def self.crew
+  def self.casts
     site = "https://www.amc.com/shows/breaking-bad/cast-crew"
     website = Nokogiri::HTML(open(site))
-    crew = website.css(".person-content h2").text
-    crew
+    casts = website.css(".person-content h2").text
+    casts
   end
 
 def self.episodes
@@ -14,11 +14,12 @@ def self.episodes
   episodes
 end
 
-def self.crew_details
+def self.cast_details
   site = "https://www.amc.com/shows/breaking-bad/cast-crew"
   website = Nokogiri::HTML(open(site))
   
-  crew_info = website.css("cast-link")
+  cast_info = website.css("cast-link")
 
 end
+
 end

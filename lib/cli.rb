@@ -3,7 +3,8 @@ class CLI
 
  def welcome
   puts "Welcome to Breaking Bad!!"
-  
+  @cast = Scraper::crew
+  @episodes = Scraper::episodes
  
     options
   end
@@ -17,9 +18,9 @@ class CLI
   input = gets.strip.downcase
   case input
   when "1"
-  puts Scraper::scrape_options
+  puts @cast
   when "2"
-  puts "Episodes"
+  puts @episodes
   when "3"
   exit
   else

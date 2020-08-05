@@ -1,22 +1,24 @@
 class Scraper
   
-  def self.scrape_options
+  def self.crew
     site = "https://www.amc.com/shows/breaking-bad/cast-crew"
     website = Nokogiri::HTML(open(site))
-    crew = website.css('.person-content h2').text
-    # binding.pry
+    crew = website.css(".person-content h2").text
+    crew
   end
 
-# sections.map do |section|
-#   xxxx.new(link.text, link.attributes["href"]).value, choices
+def self.episodes
+  site = "https://www.amc.com/shows/breaking-bad/full-episodes"
+  website = Nokogiri::HTML(open(site))
+  episodes = website.css(".title").text
+  episodes
+end
 
-# end
-
-# def self.scrape_cast
-#   site = "https://www.amc.com/shows/breaking-bad/cast-crew"
-#   website = Nokogiri::HTML(open(site))
+def self.crew_details
+  site = "https://www.amc.com/shows/breaking-bad/cast-crew"
+  website = Nokogiri::HTML(open(site))
   
-#   crew = website.css("person-content")
+  crew_info = website.css("cast-link")
 
-# end
+end
 end

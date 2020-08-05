@@ -7,7 +7,7 @@ end
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
-
+require 'colorize'
 
 require "bundler/setup"
 Bundler.require

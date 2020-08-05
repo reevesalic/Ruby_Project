@@ -17,9 +17,13 @@ end
 def self.cast_details
   site = "https://www.amc.com/shows/breaking-bad/cast-crew"
   website = Nokogiri::HTML(open(site))
-  
   cast_info = website.css("cast-link")
+end
 
+def self.episode_details
+  site = "https://www.amc.com/shows/breaking-bad/cast-crew"
+  website = Nokogiri::HTML(open(site))
+  cast_info = website.css(".description").text
 end
 
 end

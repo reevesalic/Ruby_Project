@@ -1,18 +1,24 @@
 class Breaking
     
-  attr_reader :cast, :episode
+  attr_accessor :actors, :cast_details, :episodes, :episode_details #creates an instance method. displays information without changing.
+  
+  @@all = []
 
-  all = []
-
-  def initiallize
-    @@all = all
-    @cast = cast
-    @episode = episode
+  def initialize(actors, episodes, episode_details, cast_details)
+    @actors = actors
+    @episodes = episodes
+    @episode_details = episode_details
+    @cast_details = cast_details
+    @@all << self
+    
   end
-
-  def save
-          @@all << self
+  
+  def self.all
+    @@all
   end 
 end
 
-     
+def save
+  @@all << self
+end
+

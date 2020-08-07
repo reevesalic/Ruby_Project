@@ -1,7 +1,7 @@
 class CLI  
   attr_accessor :input, :input2
 
-  def welcome
+  def welcome #instance method
     puts "\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^"
     puts "                     Welcome to Breaking Bad!!".magenta.bold
     puts "\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^"
@@ -15,10 +15,10 @@ class CLI
     input = gets.strip
     case input
       when "1"
-     Scraper.new.actors
+     Scraper.new.actors #first level scrape
      choose_option
       when "2"
-     Scraper.new.episodes
+     Scraper.new.episodes #first level scrape
      choose_option
       when "3"
       exit
@@ -29,18 +29,23 @@ class CLI
   end
 end
 
-      def choose_option
-        puts "\nPlease choose a number to see more information."
+      def choose_option #taking user input
+        puts "\nPlease enter a number to see more information."
         input = gets.strip.to_i
         max_value = Breaking.all.length
-        if input.between?(1,max_value) #checks to see if value is valid
-        else 
+      if input.between?(1,max_value) #checks to see if value is valid
+        info = Breaking.all[input-1]
+
+        display_details(info)
+      else 
           puts "\nPlease enter a valid input".red.bold
-          options
+          
           choose_option
       end
     end
+
+    def display_info(info)
     
-  
+    end
 
   

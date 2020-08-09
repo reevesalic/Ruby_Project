@@ -7,7 +7,7 @@ class CLI
     puts "\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^"
     Breaking.all
     options
-    choose_option
+    # choose_option
     end
 
   def options 
@@ -15,11 +15,13 @@ class CLI
     input = gets.strip
     case input
       when "1"
-     Scraper.new.actors #first level scrape
-     choose_option
-      when "2"
+        @type = "1"
+     actor = Scraper.new.actors #first level scrape
+     puts actor[1].name
+     actor_details
+     when "2"
      Scraper.new.episodes #first level scrape
-     choose_option
+     episode_info
       when "3"
       exit
     else
@@ -27,25 +29,33 @@ class CLI
       welcome
     end
   end
+
+def actor_details
+  puts "\nPlease enter a number to see more information.".green.bold
+    # input = gets.strip.to_i
+    Scraper.new.cast_details
+    # max_value = Breaking.all.length
+    # if input.between?(1,max_value) #checks to see if entered value is valid
+    # else
+    #   puts "Please enter valid no"
+  #  actor = Breaking.all[input-1]
+  # puts actor_details
+  # end
+end
+def episode_info
+  puts "\nPlease enter a number to see more information.".green.bold
+    input = gets.strip.to_i
+  Scraper.new.episode_details
+  max_value = Breaking.all.length
+    if input.between?(1,max_value) #checks to see if entered value is valid
+    
+   info = Breaking.all[input-1]
+end
+end
 end
 
-      def choose_option #taking user input
-        puts "\nPlease enter a number to see more information."
-        input = gets.strip.to_i
-        max_value = Breaking.all.length
-      if input.between?(1,max_value) #checks to see if value is valid
-        info = Breaking.all[input-1]
-
-        display_details(info)
-      else 
-          puts "\nPlease enter a valid input".red.bold
-          
-          choose_option
-      end
-    end
-
-    def display_info(info)
-    
-    end
+      
+      
+   
 
   

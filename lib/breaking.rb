@@ -1,6 +1,6 @@
 class Breaking
     
-  attr_accessor :name, :actors, :cast_details, :episodes, :episode_details #creates an instance method. displays information without changing.
+  attr_accessor :name, :type, :actors, :cast_details, :episodes, :episode_details #creates an instance method. displays information without changing.
   
   @@all = []
 
@@ -10,6 +10,7 @@ class Breaking
     @episode_details = episode_details
     @cast_details = cast_details
     @name = name
+    @type = type
     @@all << self
     
   end

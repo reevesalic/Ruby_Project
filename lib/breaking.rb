@@ -2,7 +2,7 @@ class Breaking
     
   attr_accessor :name, :type, :actors, :cast_details, :episodes, :episode_details #creates an instance method. displays information without changing.
   
-  @@all = []
+    @@all = []
 
   def initialize(name, actors, episodes, episode_details, cast_details)
     @actors = actors
@@ -20,7 +20,7 @@ class Breaking
   end 
 end
 
-def save
-  @@all << self
-end
+  def save
+    @@all << self
+  end
 

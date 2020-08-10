@@ -15,7 +15,7 @@ def actors
     actors = website.css('h2')[0, 4]
     actors.each.with_index(1) do |actor, index|
     puts "\n#{index}. #{actor}".chomp("h2")
-    # actors
+   
 end
 end
 
@@ -25,8 +25,8 @@ def episodes
   website = Nokogiri::HTML(open(site))
   episodes = website.css("div.title")[0, 4]
   episodes.each.with_index(1) do |episode, index|
-    puts "\n#{index}. #{episode}"
-  # episodes
+  puts "\n#{index}. #{episode}"
+  
   end
 end
 
@@ -35,16 +35,12 @@ def episode_details
   website = Nokogiri::HTML(open(site))
   episode_info = website.css(".description")[0,4]
   puts "\n#{episode_info}"
-
-
 end
-def cast_details
+ 
+ def cast_details
   site = "https://www.amc.com/shows/breaking-bad/cast-crew"
   website = Nokogiri::HTML(open(site))
   cast_info = website.css("p.description")[0,4]
-  
-    puts "\n#{cast_info}"
-
-
-end
+  puts "\n#{cast_info}"
+  end
 end

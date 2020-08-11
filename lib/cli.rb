@@ -14,13 +14,13 @@ class CLI
     input = gets.strip
     case input
       when "1"
-       @type = "1"
-       actor = Scraper.new.actors #first level scrape
-       puts actor[1].name
-       actor_details
-      when "2"
-        Scraper.new.episodes #first level scrape
-        episode_info
+      
+       episodes = Scraper.new.episodes #first level scrape
+      #  puts episodes
+      #  actor_details
+      # when "2"
+      #   # Scraper.new.episodes #first level scrape
+      #   # episode_info
       when "3"
         exit
       else
@@ -28,33 +28,30 @@ class CLI
         welcome
      end
   end
-
-def actor_details
-  puts "\nPlease enter a number to see more information.".green.bold
-  input = gets.strip.to_i
-  Scraper.new.cast_details
-  max_value = Breaking.all.length
-  if input.between?(1,max_value) #checks to see if entered value is valid
-    # else
-    #   puts "Please enter valid no"
-    actor = Breaking.all[input-1]
-   end
-  end
-
-def episode_info
-  puts "\nPlease enter a number to see more information.".green.bold
-    input = gets.strip.to_i
-  Scraper.new.episode_details
-  max_value = Breaking.all.length
-    if input.between?(1,max_value) #checks to see if entered value is valid
-    
-   info = Breaking.all[input-1]
-    end
-  end
 end
 
-      
-      
-   
+# def actor_details
+#   puts "\nPlease enter a number to see more information.".green.bold
+#   input = gets.strip.to_i
+#   Scraper.new.cast_details
+#   max_value = Breaking.all.length
+#   if input.between?(1,max_value) #checks to see if entered value is valid
+#     # else
+#     #   puts "Please enter valid no"
+#     actor = Breaking.all[input-1]
+#    end
+#   end
 
-  
+# def episode_info
+#   puts "\nPlease enter a number to see more information.".green.bold
+#     input = gets.strip.to_i
+#   Scraper.new.episode_details
+#   max_value = Breaking.all.length
+#     if input.between?(1,max_value) #checks to see if entered value is valid
+    
+#    info = Breaking.all[input-1]
+#     end
+#   end
+# end
+
+      

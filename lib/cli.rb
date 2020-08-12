@@ -1,57 +1,29 @@
 class CLI  
-  attr_accessor :input, :input2
+  # attr_accessor :input, :input2
 
   def welcome #instance method
     puts "\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^"
-    puts "                     Welcome to Breaking Bad!!".magenta.bold
+    puts "                     Welcome to Navigate Church!!".magenta.bold
     puts "\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^"
-    Breaking.all
+    Baptism.all
     options
   end
 
   def options 
-    puts "\nChoose 1 for cast information, 2 for episode information, or 3 to exit!".green.bold
+    baptism = Scraper.new.baptism #first level scrape baptism questions
+
+    puts "Please choose a number to learn more about baptism or type exit!".green.bold
+    input = ""
     input = gets.strip
-    case input
-      when "1"
-      
-       episodes = Scraper.new.episodes #first level scrape
-      #  puts episodes
-      #  actor_details
-      # when "2"
-      #   # Scraper.new.episodes #first level scrape
-      #   # episode_info
-      when "3"
-        exit
-      else
-        puts "\nInvalid entry. Please try again.".red.bold
-        welcome
-     end
+    if input.to_i > 0 && input.to_i < 5  
+      answers
+    elsif input.downcase == "exit"
+      exit
+    else
+      puts "Please enter a valid number."
   end
 end
-
-# def actor_details
-#   puts "\nPlease enter a number to see more information.".green.bold
-#   input = gets.strip.to_i
-#   Scraper.new.cast_details
-#   max_value = Breaking.all.length
-#   if input.between?(1,max_value) #checks to see if entered value is valid
-#     # else
-#     #   puts "Please enter valid no"
-#     actor = Breaking.all[input-1]
-#    end
-#   end
-
-# def episode_info
-#   puts "\nPlease enter a number to see more information.".green.bold
-#     input = gets.strip.to_i
-#   Scraper.new.episode_details
-#   max_value = Breaking.all.length
-#     if input.between?(1,max_value) #checks to see if entered value is valid
-    
-#    info = Breaking.all[input-1]
-#     end
-#   end
-# end
-
-      
+def answers(baptism)
+  answers = Scraper.baptism_answers(baptism)[input-1] #displays answers after they select a number.
+end
+end

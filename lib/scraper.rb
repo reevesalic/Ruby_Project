@@ -1,16 +1,22 @@
 class Scraper
 
 
-def episodes
-    site = "https://www.amc.com/shows/breaking-bad/full-episodes"
-    website = Nokogiri::HTML(open(site))
-    website.css("div.title").each do |title|
-        
-
-    # actor_details = website.css("p.description")[0,4]
-    puts title.text
-    # puts "\n#{cast_info}"
-end
+    def baptism
+        site = "https://www.navigate.church/"
+        website = Nokogiri::HTML(open(site))
+        website.css(".menu-section-title").each do |title|
+        puts title.text
+       
+    end
+    end
+   
+    def baptism_answers
+      site = "https://www.navigate.church/"
+      website = Nokogiri::HTML(open(site))
+      website.css(".div.menu-section-description").each do |answers|
+      puts answers.text
+     
+  end
 end
 end
 

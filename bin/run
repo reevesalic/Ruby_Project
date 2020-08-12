@@ -2,4 +2,4 @@
 
 require_relative '../config/environment.rb'
 
-breaking = CLI.new.welcome
+baptism = CLI.new.welcome

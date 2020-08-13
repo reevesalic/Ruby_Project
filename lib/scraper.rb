@@ -1,23 +1,15 @@
 class Scraper
-
-
-    def baptism
-        site = "https://www.navigate.church/"
-        website = Nokogiri::HTML(open(site))
-        website.css(".menu-section-title").each do |title|
-        puts title.text
+    def question
        
-    end
-    end
-   
-    def baptism_answers
       site = "https://www.navigate.church/"
-      website = Nokogiri::HTML(open(site))
-      website.css(".div.menu-section-description").each do |answers|
-      puts answers.text
-     
-  end
+        website = Nokogiri::HTML(open(site))
+        questions = website.css(".menu-section-title").each_with_index do |question, index|
+          question = question.text
+          answer = website.css(".menu-section-description")[index].text.strip
+          
+          Baptism.new(question, answer)
+          puts question
+      
+      end
+    end
 end
-end
-
-

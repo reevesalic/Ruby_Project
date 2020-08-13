@@ -1,12 +1,13 @@
 class Baptism
    
-  attr_accessor :baptism, :baptism_answers #creates an instance method. displays information without changing.
+  attr_accessor :question, :answer, :baptism#creates an instance method. displays information without changing.
   
    @@all = []
   
-  def initialize(baptism, baptism_answers)
+  def initialize(question, answer)
+    @question = question
+    @answer = answer
     @baptism = baptism
-    @baptism_answers = baptism_answers
     @@all << self
   end
   

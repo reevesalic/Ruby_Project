@@ -10,8 +10,9 @@ class CLI
 
     puts "\nPlease choose a number to learn more about baptism or type exit!\n".green.bold
     input = ""
-    
-    if input = gets.strip.to_i
+    input = gets.strip.to_i
+    max_value = Baptism.all.length
+    if input.between?(1, max_value)
       baptism = Baptism.all[input.to_i-1]
       
       puts baptism.answer
@@ -25,3 +26,4 @@ class CLI
     end
  end
 end
+

@@ -19,7 +19,7 @@ class CLI
     Scraper.new.question if Baptism.all.empty?
     
     list_questions
-    puts "\nPlease choose a number to learn more about baptism or type 5 to exit!\n".green.bold
+    puts "\nPlease enter a number between 1-4 to learn more about baptism or you can enter 5 to exit!\n".green.bold
     input = gets.strip.to_i
     if input.to_i == 5
       goodbye
@@ -34,11 +34,13 @@ class CLI
     end
  end
 
+ 
  def list_questions
-   array = Baptism.all.map do |object|
-   object.question.split(". ")[1]
-  end
-   sorted_array = array.sort
-   puts sorted_array
-  end
+  array = Baptism.all.map do |object|
+  object.question.split(". ")[1]
+ end
+  sorted_array = array.sort
+  puts sorted_array
+  
+ end
 end
